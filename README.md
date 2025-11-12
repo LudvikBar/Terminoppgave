@@ -19,6 +19,11 @@ Variert innhold/bruk av verktøy og kompetanseområdet
 God planlegging
 
 
+
+
+
+# Eksempel på stukturen prosjektet kommer til å ha
+
 ```text
 /nettbutikk-prosjekt
 │
