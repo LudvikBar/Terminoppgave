@@ -19,7 +19,7 @@ Variert innhold/bruk av verktøy og kompetanseområdet
 God planlegging
 
 
-
+```text
 /nettbutikk-prosjekt
 │
 ├── backend/
@@ -76,3 +76,4 @@ God planlegging
 ├── .env.example                     # Template env-variabler
 ├── README.md
 └── .gitignore
+```
