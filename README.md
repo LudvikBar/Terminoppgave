@@ -20,7 +20,59 @@ God planlegging
 
 
 
-<pre> ```text /nettbutikk-prosjekt │ ├── backend/ │ ├── config/ │ │ └── db_config.example.json # Eksempel på DB-innstillinger │ │ │ ├── controllers/ # Logikk │ │ ├── authController.js # Innlogging / registrering │ │ ├── productController.js # Produkthåndtering │ │ └── favoritesController.js # Favorittliste │ │ │ ├── models/ # DB-modeller/tabeller │ │ ├── userModel.js │ │ ├── productModel.js │ │ └── favoriteModel.js │ │ │ ├── routes/ # API-endepunkter │ │ ├── authRoutes.js │ │ ├── productRoutes.js │ │ └── favoriteRoutes.js │ │ │ ├── database/ │ │ ├── migrations/ # SQL-scripts │ │ └── seed/ # Testdata │ │ │ ├── app.js # Main backend app │ └── package.json # (hvis Node) │ ├── frontend/ │ ├── assets/ │ │ ├── css/ │ │ │ └── style.css │ │ ├── img/ │ │ └── js/ │ │ └── script.js │ │ │ ├── pages/ │ │ ├── index.html # Forside │ │ ├── Register.html # Registreringside │ │ ├── favorites.html # Favorittliste │ │ └── login.html # Innlogging │ │ │ └── components/ # Gjenbrukbare html-snippets │ ├── header.html │ └── footer.html │ ├── docs/ # Dokumentasjon │ ├── README.md │ └── Logg.docx │ ├── scripts/ # Eventuelle install/dev scripts │ └── backup_db.sh │ ├── .env.example # Template env-variabler ├── README.md └── .gitignore ``` </pre>
-
-
-
+/nettbutikk-prosjekt
+│
+├── backend/
+│   ├── config/
+│   │   └── db_config.example.json   # Eksempel på DB-innstillinger
+│
+│   ├── controllers/                 # Logikk
+│   │   ├── authController.js        # Innlogging / registrering
+│   │   ├── productController.js     # Produkthåndtering
+│   │   └── favoritesController.js   # Favorittliste
+│
+│   ├── models/                      # DB-modeller/tabeller
+│   │   ├── userModel.js
+│   │   ├── productModel.js
+│   │   └── favoriteModel.js
+│
+│   ├── routes/                      # API-endepunkter
+│   │   ├── authRoutes.js
+│   │   ├── productRoutes.js
+│   │   └── favoriteRoutes.js
+│
+│   ├── database/
+│   │   ├── migrations/              # SQL-scripts
+│   │   └── seed/                    # Testdata
+│
+│   ├── app.js                       # Main backend app
+│   └── package.json                 # (hvis Node)
+│
+├── frontend/
+│   ├── assets/
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   ├── img/
+│   │   └── js/
+│   │       └── script.js
+│
+│   ├── pages/
+│   │   ├── index.html               # Forside
+│   │   ├── Register.html            # Registreringside
+│   │   ├── favorites.html           # Favorittliste
+│   │   └── login.html               # Innlogging
+│
+│   └── components/                  # Gjenbrukbare html-snippets
+│       ├── header.html
+│       └── footer.html
+│
+├── docs/                            # Dokumentasjon
+│   ├── README.md
+│   └── Logg.docx
+│
+├── scripts/                         # Eventuelle install/dev scripts
+│   └── backup_db.sh
+│
+├── .env.example                     # Template env-variabler
+├── README.md
+└── .gitignore
