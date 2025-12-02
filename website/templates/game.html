@@ -8,19 +8,18 @@
     <link rel="stylesheet" href="/static/style.css">
   </head>
 <body>
-    
 
-<!-- From Uiverse.io by csemszepp --> 
-<div class="container">
 
-<a href="{{ url_for('game_page') }}">
-  <button>Play game</button>
-</a>
-    <!-- From Uiverse.io by nikk7007 --> 
+
+<div class="container2">
+<a href="{{ url_for('index') }}">
+  <button>Homepage</button>
 
 </div>
 
-
+    <iframe class="gamewindow" 
+    src="{{ url_for('static', filename='godot_game/VerticalPlatformer.html') }}" 
+    frameborder="0"></iframe>
 
 
 
