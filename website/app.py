@@ -5,8 +5,7 @@ import MySQLdb
 
 app = Flask(__name__)
 
-if __name__ == "__main__":
-    app.run(ssl_context='adhoc')
+
 
 @app.route("/")
 def index():
@@ -32,4 +31,6 @@ def get_db():
     )
 
 
-app.run(host="0.0.0.0", port=5000)
+app.run(host="0.0.0.0", port=3430, ssl_context=('cert.pem', 'key.pem'))
+
+    
