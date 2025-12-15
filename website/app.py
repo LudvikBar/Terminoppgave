@@ -1,6 +1,5 @@
 from flask import Flask, render_template
-import MySQLdb
-
+import pymysql
 
 
 app = Flask(__name__)
@@ -9,7 +8,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+   items = get_all_items()
+   return render_template("index.html", items=items)
 
 @app.route("/game")
 def game_page():
@@ -21,16 +21,23 @@ def platformer():
     return render_template("godot_game/VerticalPlatformer.html")
 
 
-
 def get_db():
-    return MySQLdb.connect(
+    return pymysql.connect(
         host="localhost",
-        user="piuser",
-        passwd="strongpassword",
-        db="TermonoppgaveDB"
+        user="nettbutikk",
+        password="termin",
+        database="gamebutikk"
     )
 
+def get_all_items():
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT id, name, price FROM items")
+    items = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return items
 
-app.run(host="0.0.0.0", port=3430, ssl_context=('cert.pem', 'key.pem'))
 
-    
+
+app.run(host="0.0.0.0", port=5000, ssl_context=('cert.pem', 'key.pem'))
