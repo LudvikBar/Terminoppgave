@@ -3,9 +3,25 @@ I dette prosjektet hoster jeg mitt eget Godot spill med en tilhørende nettbutik
 
 
 
-# Brukerveiledning
+## Brukerveiledning
 
 
+
+### Automatisk setup
+Kjør kommandoene en etter en
+<pre>
+git clone https://github.com/LudvikBar/Terminoppgave.git
+cd Termonoppgave
+chmod +x setup.sh
+./setup.sh   
+</pre>
+
+
+
+
+
+
+### Manuel setup
 På Raspberry Pi terminalen eller gjennom ssh installer mariadb, flask og pymysql. Jeg anbefaler og også installere og sette opp venv, det gjør så ting du installerer inni ikke tuller med resten av systemen. Alt du installerer der, installeres bare der.
 
 Bare det som står i grått er kommandoer som skal kjøres.
@@ -154,6 +170,7 @@ def get_db():
   database="gamebutikk" 
   ) 
  </pre>
+
 
 
 
