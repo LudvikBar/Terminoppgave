@@ -8,7 +8,7 @@ I dette prosjektet hoster jeg mitt eget Godot spill med en tilhørende nettbutik
 
 
 ### Automatisk setup
-Kjør kommandoene en etter en
+Kjør kommandoene en etter en. scriptet vil sette passordet til mariadb root bruker til "1234" for å komme seg in i mariadb. Dette kan endres etter setup-en er ferdig.
 <pre>
 git clone https://github.com/LudvikBar/Terminoppgave.git
 cd Termonoppgave
@@ -170,6 +170,7 @@ def get_db():
   database="gamebutikk" 
   ) 
  </pre>
+
 
 
 
