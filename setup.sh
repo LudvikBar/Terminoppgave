@@ -58,4 +58,5 @@ echo "=== SETUP FULLFØRT ==="
 echo "MariaDB root-passord: 1234"
 echo "DB-bruker: nettbutikk"
 echo "Database: gamebutikk"
-echo "Husk å oppdatere app.py hvis nødvendig"
+echo "Sertifikat-filene heter domain.crt og domain.key"
+
