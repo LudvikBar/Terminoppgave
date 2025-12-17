@@ -9,11 +9,22 @@ I dette prosjektet hoster jeg mitt eget Godot spill med en tilhørende nettbutik
 
 ### Automatisk setup
 Kjør kommandoene en etter en. scriptet vil sette passordet til mariadb root bruker til "1234" for å komme seg in i mariadb. Dette kan endres etter setup-en er ferdig.
+
+Hvis du allerede har satt ett passord til root på en eksisterende mariadb, da må du gå in å endre scriptet så den logger in med ditt passord.
+
+Gå til "Setter opp database, bruker og tabell" og bytt BARE TALLENE 1234 med dit passord. Det skal se slik ut: mysql -uroot -pEksempelPassord <<MYSQL_SCRIPT
+
+
+Hvis du ikke har mariadb fra før eller satt passord for root, så legg koden under rett over "Setter opp database, bruker og tabell". Passordet til root vil da bli "1234".
+
+echo "=== Setter MariaDB root-passord ==="
+mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '1234'; FLUSH PRIVILEGES;"
+
 <pre>
 git clone https://github.com/LudvikBar/Terminoppgave.git
-cd Termonoppgave
+cd Terminoppgave
 chmod +x setup.sh
-./setup.sh   
+sudo ./setup.sh   
 </pre>
 
 

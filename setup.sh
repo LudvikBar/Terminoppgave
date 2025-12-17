@@ -24,8 +24,7 @@ echo "=== Starter og aktiverer MariaDB ==="
 systemctl start mariadb
 systemctl enable mariadb
 
-echo "=== Setter MariaDB root-passord ==="
-mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '1234'; FLUSH PRIVILEGES;"
+
 
 echo "=== Setter opp database, bruker og tabell ==="
 mysql -uroot -p1234 <<MYSQL_SCRIPT
