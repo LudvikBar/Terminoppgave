@@ -7,7 +7,8 @@ I dette prosjektet hoster jeg mitt eget Godot spill med en tilhørende nettbutik
 
 
 
-### Automatisk setup
+### Automatisk setup - ikke funksjonell
+### Work in progress
 
 **Steg 1**
 Kjør kommandoene under en etter en
@@ -23,7 +24,7 @@ cd Terminoppgave
 
 ***Hvis du allerede har satt ett passord til root*** på en eksisterende mariadb, da må du gå in å endre setup.sh så den logger inn med ditt passord.
 
-Gå til "Setter opp database, bruker og tabell" og bytt BARE TALLENE 1234 med dit passord. Bokstaven "p" skal må bli der. Det skal se slik ut: mysql -uroot -pEksempelPassord <<MYSQL_SCRIPT
+Gå til "Setter opp database, bruker og tabell" og bytt BARE TALLENE 1234 med dit passord. Bokstaven "p" skal må bli der. Det skal se slik ut: mysql -uroot -p1234 <<MYSQL_SCRIPT
 
 
 ***Hvis du ikke har mariadb fra før eller ikke satt passord for root***, så legg koden nedenfor rett over "Setter opp database, bruker og tabell" i setup.sh. Passordet til root vil da bli "1234".
