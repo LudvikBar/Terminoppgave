@@ -40,4 +40,4 @@ def get_all_items():
 
 
 
-app.run(host="0.0.0.0", port=5000, ssl_context=('domain.key', 'domain.crt'))
+app.run(host="0.0.0.0", port=5000, ssl_context=('domain.crt', 'domain.key'))
