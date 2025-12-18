@@ -48,10 +48,7 @@ INSERT INTO items (name, price) VALUES
 ('physical copy x3', 115.00);
 MYSQL_SCRIPT
 
-echo "=== Genererer SSL-sertifikat ==="
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
--keyout domain.key -out domain.crt -sha256 \
--subj "/C=NO/ST=Oslo/L=Oslo/O=Example Company/CN=example.com"
+
 
 echo "=== SETUP FULLFØRT ==="
 echo "MariaDB root-passord: 1234"
