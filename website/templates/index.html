@@ -18,53 +18,38 @@
 </div>
 
 <div class="boxes">
-    <!-- Card 1 -->
+{% if items %}
+    {% for item in items %}
     <div class="card">
         <div class="card-img">
             <img src="/static/images/SSDicon.png" alt="">
         </div>
-        <div class="card-title">{{ items[0][1] }}</div> <!-- Name from DB -->
-        <div class="card-subtitle">One in the pack.</div>
-        <hr class="card-divider">
-        <div class="card-footer">
-            <div class="card-price"><span>kr</span> {{ "%.2f"|format(items[0][2]) }}</div> <!-- Price from DB -->
-            <button class="card-btn">
-                <!-- SVG here -->
-            </button>
-        </div>
-    </div>
 
-    <!-- Card 2 -->
-    <div class="card">
-        <div class="card-img">
-            <img src="/static/images/SSDicon.png" alt="">
-        </div>
-        <div class="card-title">{{ items[1][1] }}</div>
-        <div class="card-subtitle">Two in the pack.</div>
-        <hr class="card-divider">
-        <div class="card-footer">
-            <div class="card-price"><span>kr</span> {{ "%.2f"|format(items[1][2]) }}</div>
-            <button class="card-btn">
-                <!-- SVG here -->
-            </button>
-        </div>
-    </div>
+        <div class="card-title">{{ item[1] }}</div> <!-- name -->
 
-    <!-- Card 3 -->
-    <div class="card">
-        <div class="card-img">
-            <img src="/static/images/SSDicon.png" alt="">
+        <div class="card-subtitle">
+            {{ loop.index }} in the pack.
         </div>
-        <div class="card-title">{{ items[2][1] }}</div>
-        <div class="card-subtitle">Three in the pack.</div>
+
         <hr class="card-divider">
+
         <div class="card-footer">
-            <div class="card-price"><span>kr</span> {{ "%.2f"|format(items[2][2]) }}</div>
+            <div class="card-price">
+                <span>kr</span> {{ "%.2f"|format(item[2]) }}
+            </div>
+
             <button class="card-btn">
-                <!-- SVG here -->
+                <!-- SVG -->
             </button>
         </div>
     </div>
+    {% endfor %}
+
+{% else %}
+    <p>No products available.</p>
+{% endif %}
+
+
 </div>
 
 
