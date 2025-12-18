@@ -7,8 +7,8 @@ I dette prosjektet hoster jeg mitt eget Godot spill med en tilhørende nettbutik
 
 
 
-### Automatisk setup - ikke funksjonell
-### Work in progress
+### Automatisk setup 
+
 
 **Steg 1**
 Kjør kommandoene under en etter en
@@ -24,13 +24,26 @@ cd Terminoppgave
 
 ***Hvis du allerede har satt ett passord til root*** på en eksisterende mariadb, da må du gå in å endre setup.sh så den logger inn med ditt passord.
 
-Gå til "Setter opp database, bruker og tabell" og bytt BARE TALLENE 1234 med dit passord. Bokstaven "p" skal må bli der. Det skal se slik ut: mysql -uroot -p1234 <<MYSQL_SCRIPT
+Gå til "Setter opp database, bruker og tabell" i setup.sh med **nano setup.sh** og bytt BARE TALLENE 1234 med dit passord. Bokstaven "p" skal må bli der. Det skal se slik ut: mysql -uroot -p1234 <<MYSQL_SCRIPT
 
 
-***Hvis du ikke har mariadb fra før eller ikke satt passord for root***, så legg koden nedenfor rett over "Setter opp database, bruker og tabell" i setup.sh. Passordet til root vil da bli "1234".
+
+For å lagre, først trykk ctrl+o, så trykk enter og så ctrl+x
+
+
+
+
+
+***Hvis du ikke har mariadb fra før eller ikke satt passord for root***, så legg koden nedenfor rett over "Setter opp database, bruker og tabell" i setup.sh. Bruk **nano setup.sh**.
+Passordet til root vil da bli "1234".
 
 echo "=== Setter MariaDB root-passord ==="
 mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '1234'; FLUSH PRIVILEGES;"
+
+
+
+For å lagre, først trykk ctrl+o, så trykk enter og så ctrl+x
+
 
 
 **Steg 3**
@@ -43,6 +56,29 @@ chmod +x setup.sh
 sudo ./setup.sh   
 </pre>
 
+
+**Steg 4**
+Hvis det ikke står venv før directory, kjør:
+> source venv/bin/activate
+
+
+
+**Steg 5**
+Skriv:
+> cd website
+
+
+kjør så: 
+> openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+-keyout domain.key -out domain.crt -sha256 \
+-subj "/C=NO/ST=Oslo/L=Oslo/O=Example Company/CN=example.com"
+
+
+
+**Steg 6**
+
+For å kjøre programmet:
+> python3 app.py
 
 
 
